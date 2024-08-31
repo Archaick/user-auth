@@ -27,11 +27,12 @@ const Auth = () => {
 
     const handleSignIn = async (e) => {
         e.preventDefault()
+        setError('')
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password)
             setUser(userCredential.user)
-        } catch (error) {
-            console.error('Error signing in: ', error)
+        } catch (err) {
+            setError(err)
         }
     } 
 
@@ -55,7 +56,7 @@ const Auth = () => {
 
             {!user ? (
                 <section className='auth-align'>
-                    <h2>Sign Up / Sign In</h2>
+                    <h2>{isSignUp ? 'Register' : 'Sign In'}</h2>
                     <form onSubmit={isSignUp ? handleSignUp : handleSignIn}>
                         <input type="email" 
                         placeholder='Email'
@@ -69,7 +70,10 @@ const Auth = () => {
                         />
                         <button type='submit'>{isSignUp ? 'Sign Up' : 'Sign In'}</button>
                     </form>
-                    <button onClick={toggleAuthMode}>{isSignUp ? 'Already have an account? Sign In' : 'Don\'t have an account? Register'}</button>
+                    {error && <p className='error-message'>{error}  </p>}
+                    <button onClick={toggleAuthMode}>
+                        {isSignUp ? 'Already have an account? Sign In' : 'Don\'t have an account? Register'}
+                    </button>
                 </section>
             ) : (
                 <section>
