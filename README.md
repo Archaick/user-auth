@@ -1,1 +1,1 @@
-# ⚛️ React, Mantine UI and Firebase backend auth, storage project
+# ⚛️ React, Mantine UI and 🔥 Firebase backend auth, storage project

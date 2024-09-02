@@ -12,4 +12,10 @@
     justify-content: center;
     align-items: center;
     gap: 6px;
+} 
+
+.auth-align form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
