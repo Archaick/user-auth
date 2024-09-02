@@ -40,7 +40,7 @@ const Auth = () => {
     } 
 
     const handlePasswordReset = async (e) => {
-        e.preventDefault
+        e.preventDefault()
         setError('')
         setMessage('')
         if (!email) {
