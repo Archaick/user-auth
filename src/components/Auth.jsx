@@ -79,7 +79,7 @@ const Auth = () => {
                 <h2>{isPasswordReset ? 'Reset Password' : isSignUp ? 'Register' : 'Sign In'}</h2>
                 {!isPasswordReset ? (
                     <form onSubmit={isSignUp ? handleSignUp : handleSignIn}>
-                        <input 
+                        <input  
                             type="email" 
                             placeholder='Email'
                             value={email}
